@@ -4,9 +4,9 @@ import axios from "axios";
  export default function Pagee() {
   const [state, setstate] = useState([])
      useEffect (() => {
-       axios.get("https://api.nationalize.io/?name=michael").then((res) => {
-    console.log(res.data.country)
-    setstate(res.data.country)
+       axios.get("http://www.omdbapi.com/?i=tt3896198&apikey=be3b01cb").then((res) => {
+    console.log(res.data)
+     setstate(res.data)
        })
         }, [])
    return (
@@ -14,9 +14,9 @@ import axios from "axios";
         {state.map(items => {
      return(
         <>
-       {/* <img src={items.country_id}/> */}
-        <p>{items.country_id}</p>
-        <p>{items.probability}</p>
+       <img src={items.image}></img>
+        {/* <p>{items.country_id}</p> */}
+        <p>{items.Year}</p> 
         </>
       )
     })}
